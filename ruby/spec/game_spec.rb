@@ -14,6 +14,11 @@ module UglyTrivia
         expect(Game.pure_current_category(5)).to eq("Science")
         expect(Game.pure_current_category(9)).to eq("Science")
       end
+      it "should return Pop for 2, 6, 10" do
+        expect(Game.pure_current_category(2)).to eq("Sports")
+        expect(Game.pure_current_category(6)).to eq("Sports")
+        expect(Game.pure_current_category(10)).to eq("Sports")
+      end
     end
   end
 end

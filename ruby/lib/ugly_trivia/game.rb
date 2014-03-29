@@ -102,6 +102,8 @@ module UglyTrivia
     def self.pure_current_category place
       case place % 4
       when 0 then "Pop"
+      when 1 then "Science"
+      when 2 then "Sports"
       end
     end
 
