@@ -104,13 +104,7 @@ module UglyTrivia
     def was_correctly_answered
       if @in_penalty_box[@current_player]
         if @is_getting_out_of_penalty_box
-          puts 'Answer was correct!!!!'
-          gets_a_dollar
-
-          winner = did_player_win()
-          get_next_player
-
-          winner
+          correctly_answered("correct")
         else
           get_next_player
           true
@@ -126,6 +120,16 @@ module UglyTrivia
 
         return winner
       end
+    end
+
+    def correctly_answered legacy_spelling
+      puts "Answer was #{legacy_spelling}!!!!"
+      gets_a_dollar
+
+      winner = did_player_win()
+      get_next_player
+
+      winner
     end
 
     def gets_a_dollar
