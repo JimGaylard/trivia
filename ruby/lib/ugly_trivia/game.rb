@@ -99,8 +99,10 @@ module UglyTrivia
       return 'Rock'
     end
 
-    def self.pure_current_category player
-      "Pop"
+    def self.pure_current_category place
+      case place % 4
+      when 0 then "Pop"
+      end
     end
 
   public
