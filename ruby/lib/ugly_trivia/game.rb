@@ -111,17 +111,11 @@ module UglyTrivia
         end
 
       else
-
-        puts "Answer was corrent!!!!"
-        gets_a_dollar
-
-        winner = did_player_win
-        get_next_player
-
-        return winner
+        correctly_answered "corrent"
       end
     end
 
+    # hack for spelling mistake
     def correctly_answered legacy_spelling
       puts "Answer was #{legacy_spelling}!!!!"
       gets_a_dollar
