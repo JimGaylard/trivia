@@ -99,6 +99,10 @@ module UglyTrivia
       return 'Rock'
     end
 
+    def self.pure_current_category player
+      "Pop"
+    end
+
   public
 
     def was_correctly_answered
