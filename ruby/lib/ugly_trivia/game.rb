@@ -108,17 +108,13 @@ module UglyTrivia
           gets_a_dollar
 
           winner = did_player_win()
-          @current_player += 1
-          @current_player = 0 if @current_player == @players.length
+          get_next_player
 
           winner
         else
-          @current_player += 1
-          @current_player = 0 if @current_player == @players.length
+          get_next_player
           true
         end
-
-
 
       else
 
@@ -126,8 +122,7 @@ module UglyTrivia
         gets_a_dollar
 
         winner = did_player_win
-        @current_player += 1
-        @current_player = 0 if @current_player == @players.length
+        get_next_player
 
         return winner
       end
@@ -136,6 +131,11 @@ module UglyTrivia
     def gets_a_dollar
       @purses[@current_player] += 1
       puts "#{@players[@current_player]} now has #{@purses[@current_player]} Gold Coins."
+    end
+
+    def get_next_player
+        @current_player += 1
+        @current_player = 0 if @current_player == @players.length
     end
 
     def wrong_answer
